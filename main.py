@@ -18,11 +18,10 @@ async def index(request: Request):
 
 
 @app.get("/cv")
-async def download_cv():
-    cv_path = BASE_DIR / "static" / "gonzalez-sanchez-cv.pdf"
-    return FileResponse(
-        cv_path,
-        media_type="application/pdf",
-        filename="gonzalez-sanchez-cv.pdf",
-        headers={"Content-Disposition": "attachment; filename=gonzalez-sanchez-cv.pdf"},
-    )
+async def cv_en():
+    return FileResponse(BASE_DIR / "static" / "gonzalez-sanchez-cv-en.html", media_type="text/html")
+
+
+@app.get("/cv/nl")
+async def cv_nl():
+    return FileResponse(BASE_DIR / "static" / "gonzalez-sanchez-cv-nl.html", media_type="text/html")
