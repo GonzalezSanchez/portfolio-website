@@ -1,0 +1,9 @@
+services:
+  portfolio-website:
+    build: .
+    container_name: portfolio-website
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./static:/app/static
+    restart: unless-stopped
