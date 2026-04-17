@@ -14,7 +14,7 @@ templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
 @app.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, "index.html")
 
 
 @app.get("/cv")

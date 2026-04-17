@@ -25,4 +25,29 @@ uvicorn main:app --reload
 
 Then open [http://localhost:8000](http://localhost:8000).
 
-> **Note:** The CV PDF is not included in the repository. Place your file at `static/gonzalez-sanchez-cv.pdf` before running.
+> **Note:** CV files are not included in the repository (gitignored). Place them manually before running or deploying:
+> - `static/gonzalez-sanchez-cv.pdf`
+> - `static/gonzalez-sanchez-cv-en.html`
+> - `static/gonzalez-sanchez-cv-nl.html`
+
+## Deployment
+
+The app runs on the server as a Docker container behind a Cloudflare tunnel.
+
+### Update code
+```bash
+# On the server
+cd ~/Portfolio/portfolio-website
+git pull
+docker build -t portfolio-website .
+docker stop portfolio-website && docker rm portfolio-website
+docker run -d --name portfolio-website --restart unless-stopped -p 8000:8000 portfolio-website
+```
+
+### Update CV files (manual — not in git)
+```bash
+# From local machine
+scp static/gonzalez-sanchez-cv.pdf acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
+scp static/gonzalez-sanchez-cv-en.html acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
+scp static/gonzalez-sanchez-cv-nl.html acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
+```
