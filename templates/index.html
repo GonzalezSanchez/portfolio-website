@@ -57,7 +57,7 @@
                 <a href="mailto:alvaro@gonzalezsanchez.dev" class="hover:text-sky-400 transition" title="Email">
                     <i class="fas fa-envelope text-xl"></i>
                 </a>
-                <a href="https://linkedin.com/in/GonzalezSanchez" target="_blank" class="hover:text-sky-400 transition" title="LinkedIn">
+                <a href="https://linkedin.com/in/gonzalezsanchez" target="_blank" class="hover:text-sky-400 transition" title="LinkedIn">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
                 <a href="https://github.com/GonzalezSanchez" target="_blank" class="hover:text-sky-400 transition" title="GitHub">
@@ -112,19 +112,22 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">AWS Lambda</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">S3</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">API Gateway</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">DynamoDB</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">RDS</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Athena</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">CloudFormation</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">ECS</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Aurora Serverless</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Step Functions</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">EventBridge</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Secrets Manager</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">CloudWatch</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">SNS</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">CloudFormation</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Terraform</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Docker</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Docker Compose</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Kubernetes</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Nginx</span>
-                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Terraform</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Cloudflare</span>
                     </div>
                 </div>
 
@@ -263,40 +266,114 @@
     <!-- Projects -->
     <section id="projects" class="py-24 px-6 bg-slate-800/40">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12">Projects</h2>
-            <div class="grid md:grid-cols-2 gap-6">
+            <h2 class="text-3xl font-bold mb-6">Projects</h2>
 
+            <!-- IoT Platform intro -->
+            <div class="mb-10 p-6 bg-slate-800/60 rounded-xl border border-slate-700">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-lg font-semibold text-sky-300">IoT Monitoring Platform</h3>
+                    <div class="flex gap-3">
+                        <a href="https://iot.gonzalezsanchez.dev" target="_blank" class="text-slate-400 hover:text-sky-400 transition text-sm">
+                            <i class="fas fa-external-link-alt mr-1"></i>Live
+                        </a>
+                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank" class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    A growing platform covering all layers of a real IoT system — from real-time sensor ingestion to behavioral analytics.
+                    Built around a conference room monitoring use case (temperature, humidity, occupancy, motion), with a deliberate focus on
+                    clean architecture, infrastructure as code, and engineering practices that hold up in production.
+                    215 tests across three projects, 80%+ coverage enforced on every push via GitHub Actions.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Project 1a -->
                 <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
                     <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">IoT Monitoring Platform</h3>
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 1a</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Serverless Ingestion</h3>
+                        </div>
                         <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                           class="text-slate-400 hover:text-sky-400 transition">
+                            class="text-slate-400 hover:text-sky-400 transition">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
                     <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        End-to-end platform for real-time monitoring of meeting rooms (temperature, humidity, occupancy, motion).
-                        Clean architecture with threshold-based anomaly detection, two deployment variants (serverless AWS and containerised),
-                        React dashboard, and 108 unit tests with 82% coverage enforced via GitHub Actions.
+                        Serverless REST API for real-time sensor event ingestion with threshold-based anomaly detection.
+                        Clean layered architecture (models → services → repositories).
+                        Full infrastructure as code with CloudFormation. Deployed to AWS via CI/CD.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS Lambda</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">API Gateway</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">DynamoDB</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">CloudFormation</span>
+                    </div>
+                </div>
+
+                <!-- Project 1b -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 1b</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Containerised Ingestion</h3>
+                        </div>
+                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
+                            class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Same domain logic as 1a, redeployed as a containerised FastAPI app — demonstrating separation of business logic from infrastructure.
+                        Live on a home server via Docker Compose + Cloudflare tunnel. React dashboard with 30s auto-refresh.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">FastAPI</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS</span>
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Docker</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">nginx</span>
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">React</span>
                     </div>
                     <div class="pt-4 border-t border-slate-700">
                         <a href="https://iot.gonzalezsanchez.dev" target="_blank"
-                           class="text-sky-400 text-sm hover:text-sky-300 transition">
+                            class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fas fa-external-link-alt mr-1"></i>Live →
                         </a>
                     </div>
                 </div>
 
-                <!-- Placeholder for future projects -->
-                <div class="bg-slate-800/50 rounded-xl p-6 border border-dashed border-slate-700 flex items-center justify-center">
-                    <p class="text-slate-600 text-sm">More projects coming soon…</p>
+                <!-- Project 2a -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2a</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer</h3>
+                        </div>
+                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
+                            class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Serverless ETL pipeline: extracts historical sensor data from DynamoDB, detects occupancy schedules, temperature trends and anomalies, stores results in Aurora Serverless v2 (PostgreSQL).
+                        Full Terraform infrastructure. Runs on-demand to minimise costs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Step Functions</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Aurora Serverless</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Terraform</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">EventBridge</span>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700">
+                        <span class="text-slate-500 text-xs"><i class="fas fa-bolt mr-1"></i>On-demand · AWS</span>
+                    </div>
                 </div>
 
             </div>
@@ -411,7 +488,7 @@
             <span>Álvaro González Sánchez · Leuven, Belgium</span>
             <div class="flex gap-6">
                 <a href="mailto:alvaro@gonzalezsanchez.dev" class="hover:text-white transition">alvaro@gonzalezsanchez.dev</a>
-                <a href="https://linkedin.com/in/GonzalezSanchez" target="_blank" class="hover:text-sky-400 transition">LinkedIn</a>
+                <a href="https://linkedin.com/in/gonzalezsanchez" target="_blank" class="hover:text-sky-400 transition">LinkedIn</a>
                 <a href="https://github.com/GonzalezSanchez" target="_blank" class="hover:text-sky-400 transition">GitHub</a>
             </div>
         </div>
