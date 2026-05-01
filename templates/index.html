@@ -128,6 +128,8 @@
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Nginx</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Cloudflare</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">OpenTelemetry</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Datadog</span>
                     </div>
                 </div>
 
@@ -330,8 +332,7 @@
                         </a>
                     </div>
                     <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Same domain logic as 1a, redeployed as a containerised FastAPI app — demonstrating separation of business logic from infrastructure.
-                        Live on a home server via Docker Compose + Cloudflare tunnel. React dashboard with 30s auto-refresh.
+                        Same domain logic as 1a, redeployed as a containerised FastAPI app. End-to-end observability with OpenTelemetry auto-instrumentation → OTel Collector → Datadog APM: distributed traces with automatic DynamoDB child span detection, log-trace correlation, and Watchdog anomaly detection — zero manual instrumentation.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
@@ -339,11 +340,24 @@
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Docker</span>
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">nginx</span>
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">React</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">OpenTelemetry</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Datadog</span>
                     </div>
-                    <div class="pt-4 border-t border-slate-700">
+                    <a href="/static/img/datadog-flame-graph.png" target="_blank" title="Click to enlarge">
+                        <div class="mb-4 rounded-lg overflow-hidden border border-slate-700 hover:border-sky-500/50 transition">
+                            <img src="/static/img/datadog-flame-graph.png"
+                                 alt="Datadog APM — POST /events flame graph with automatic DynamoDB child span detection"
+                                 class="w-full">
+                        </div>
+                    </a>
+                    <div class="pt-4 border-t border-slate-700 flex gap-4">
                         <a href="https://iot.gonzalezsanchez.dev" target="_blank"
                             class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fas fa-external-link-alt mr-1"></i>Live →
+                        </a>
+                        <a href="https://www.linkedin.com/posts/activity-7455558039853645824-reu9" target="_blank"
+                            class="text-sky-400 text-sm hover:text-sky-300 transition">
+                            <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
                         </a>
                     </div>
                 </div>
