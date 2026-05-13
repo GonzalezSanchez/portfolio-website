@@ -130,6 +130,8 @@
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Cloudflare</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">OpenTelemetry</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Datadog</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">AWS S3</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Jenkins</span>
                     </div>
                 </div>
 
@@ -287,7 +289,7 @@
                     A growing platform covering all layers of a real IoT system — from real-time sensor ingestion to behavioral analytics.
                     Built around a conference room monitoring use case (temperature, humidity, occupancy, motion), with a deliberate focus on
                     clean architecture, infrastructure as code, and engineering practices that hold up in production.
-                    215 tests across three projects, 80%+ coverage enforced on every push via GitHub Actions.
+                    280 tests across four projects, 80%+ coverage enforced on every push via GitHub Actions.
                 </p>
             </div>
 
@@ -395,6 +397,41 @@
                     <div class="pt-4 border-t border-slate-700 flex gap-4">
                         <span class="text-slate-500 text-xs"><i class="fas fa-bolt mr-1"></i>On-demand · AWS</span>
                         <a href="https://www.linkedin.com/posts/activity-7450582273697026049-aOCE" target="_blank"
+                            class="text-sky-400 text-sm hover:text-sky-300 transition">
+                            <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2b -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2b</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer <span class="text-slate-400 font-normal text-sm">· Data Engineering</span></h3>
+                        </div>
+                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
+                            class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Same analytics goal as 2a, re-implemented with a data engineering stack. 3-layer S3 data lake: raw Parquet (DynamoDB scan) → processed Parquet (validated, cleaned) → PostgreSQL serving layer. PySpark analytics: occupancy schedules, temperature trend regression (regr_slope), z-score anomaly detection. Results surfaced in Power BI, embedded in the live dashboard. Deployed via a 9-stage Jenkins CD pipeline.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Apache Airflow</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">PySpark</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS S3</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Power BI</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Jenkins</span>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700 flex gap-4">
+                        <a href="https://iot.gonzalezsanchez.dev" target="_blank"
+                            class="text-sky-400 text-sm hover:text-sky-300 transition">
+                            <i class="fas fa-external-link-alt mr-1"></i>Live →
+                        </a>
+                        <a href="https://www.linkedin.com/posts/activity-7460185827344539648-r7Jw" target="_blank"
                             class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
                         </a>
