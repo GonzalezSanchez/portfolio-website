@@ -164,6 +164,7 @@
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Apache Airflow</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">dbt</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Auto Loader</span>
+                        <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Databricks Asset Bundles</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">ETL/ELT</span>
                         <span class="w-full text-xs text-slate-500 font-semibold uppercase tracking-wider mt-3">Observability & BI</span>
                         <span class="bg-slate-700 text-slate-300 px-3 py-1 rounded-full text-sm">Grafana Cloud</span>
@@ -308,7 +309,7 @@
                     A growing platform covering all layers of a real IoT system — from real-time sensor ingestion to behavioral analytics.
                     Built around a conference room monitoring use case (temperature, humidity, occupancy, motion), with a deliberate focus on
                     clean architecture, infrastructure as code, and engineering practices that hold up in production.
-                    309 tests across four projects, 80%+ coverage enforced on every push via GitHub Actions.
+                    352 tests across five projects, 80%+ coverage enforced on every push via GitHub Actions.
                 </p>
             </div>
 
@@ -456,6 +457,39 @@
                         <a href="https://www.linkedin.com/posts/activity-7460192379891855360-47j7" target="_blank"
                             class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2c -->
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2c</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer <span class="text-slate-400 font-normal text-sm">· Azure Databricks Lakehouse</span></h3>
+                        </div>
+                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
+                            class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Same analytics domain as 2b, rebuilt on a fully managed Azure stack. Bronze ingestion via Auto Loader, Silver transformation with the Write-Audit-Publish pattern (good records MERGEd idempotent, invalid records to quarantine — never deleted), Gold layer with dbt-databricks incremental models: z-score anomaly detection, hourly aggregations, dimensional models. Full IaC via Terraform. Weekly schedule via Databricks Asset Bundles. Gold data served live via FastAPI /lakehouse/* endpoints.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Azure Databricks</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Delta Lake</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Unity Catalog</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">dbt</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">ADLS Gen2</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Terraform</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">DABs</span>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700 flex gap-4">
+                        <a href="https://iot.gonzalezsanchez.dev" target="_blank"
+                            class="text-sky-400 text-sm hover:text-sky-300 transition">
+                            <i class="fas fa-external-link-alt mr-1"></i>Live →
                         </a>
                     </div>
                 </div>
