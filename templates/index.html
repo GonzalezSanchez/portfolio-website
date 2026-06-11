@@ -474,7 +474,7 @@
                         </a>
                     </div>
                     <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Same analytics domain as 2b, rebuilt on a fully managed Azure stack. Bronze ingestion via Auto Loader, Silver transformation with the Write-Audit-Publish pattern (good records MERGEd idempotent, invalid records to quarantine — never deleted), Gold layer with dbt-databricks incremental models: z-score anomaly detection, hourly aggregations, dimensional models. Full IaC via Terraform. Weekly schedule via Databricks Asset Bundles. Gold data served live via FastAPI /lakehouse/* endpoints.
+                        Same analytics domain as 2b, rebuilt on a fully managed Azure stack. Bronze ingestion via Auto Loader, Silver transformation with the Write-Audit-Publish pattern (good records MERGEd idempotent, invalid records to quarantine — never deleted), Gold layer with dbt-databricks incremental models: z-score anomaly detection, hourly aggregations, dimensional models. Full IaC via Terraform. Monthly job on the 1st at 06:00 Brussels time via Databricks Asset Bundles. Gold data served live via FastAPI /lakehouse/* endpoints.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
