@@ -502,20 +502,38 @@
     <section class="py-24 px-6">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold mb-12">Open Source</h2>
-            <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group max-w-xl">
-                <div class="flex justify-between items-start mb-3">
-                    <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">PynamoDB</h3>
-                    <a href="https://github.com/pynamodb/PynamoDB/pull/1302" target="_blank"
-                       class="text-slate-400 hover:text-sky-400 transition">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Pydantic <span class="text-slate-400 font-normal text-sm">· 10B+ downloads</span></h3>
+                        <a href="https://github.com/pydantic/pydantic/pull/13149" target="_blank"
+                           class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Fixed silent acceptance of unknown mypy plugin config keys; added validation and clear warnings for both pyproject.toml and .ini formats, with test coverage. · <a href="https://github.com/pydantic/pydantic/pull/13149" target="_blank" class="text-sky-400 hover:text-sky-300">PR #13149</a>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">mypy plugin</span>
+                    </div>
                 </div>
-                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                    Fixed a bug where Enum values were incorrectly rejected as attribute defaults due to an incomplete type validation list. · <a href="https://github.com/pynamodb/PynamoDB/pull/1302" target="_blank" class="text-sky-400 hover:text-sky-300">PR #1302</a>
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                    <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS DynamoDB</span>
+                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">PynamoDB <span class="text-slate-400 font-normal text-sm">· 2k+ stars</span></h3>
+                        <a href="https://github.com/pynamodb/PynamoDB/pull/1302" target="_blank"
+                           class="text-slate-400 hover:text-sky-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Fixed a bug where Enum values were incorrectly rejected as attribute defaults due to an incomplete type validation list. · <a href="https://github.com/pynamodb/PynamoDB/pull/1302" target="_blank" class="text-sky-400 hover:text-sky-300">PR #1302</a>
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS DynamoDB</span>
+                    </div>
                 </div>
             </div>
         </div>
