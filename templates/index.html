@@ -321,224 +321,52 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Project 1a -->
+                {% for p in projects %}
                 <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
                     <div class="flex justify-between items-start mb-3">
                         <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 1a</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Serverless Ingestion</h3>
+                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">{{ p.label }}</p>
+                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">{{ p.title }}{% if p.subtitle %} <span class="text-slate-400 font-normal text-sm">· {{ p.subtitle }}</span>{% endif %}</h3>
                         </div>
                         <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
                             class="text-slate-400 hover:text-sky-400 transition">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Serverless REST API for real-time sensor event ingestion with threshold-based anomaly detection.
-                        Clean layered architecture (models → services → repositories).
-                        Full infrastructure as code with CloudFormation. Deployed to AWS via CI/CD.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS Lambda</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">API Gateway</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">DynamoDB</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">CloudFormation</span>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">{{ p.description }}</p>
+                    <div class="flex flex-wrap gap-2{% if p.image or p.live or p.linkedin or p.note %} mb-4{% endif %}">
+                        {% for tag in p.tags %}
+                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">{{ tag }}</span>
+                        {% endfor %}
                     </div>
-                </div>
-
-                <!-- Project 1b -->
-                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 1b</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Containerised Ingestion</h3>
-                        </div>
-                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                            class="text-slate-400 hover:text-sky-400 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Same domain logic as 1a, redeployed as a containerised FastAPI app. End-to-end observability with OpenTelemetry auto-instrumentation → OTel Collector → Datadog APM: distributed traces with automatic DynamoDB child span detection, log-trace correlation, and Watchdog anomaly detection — zero manual instrumentation.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">FastAPI</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Docker</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">nginx</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">React</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">OpenTelemetry</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Datadog</span>
-                    </div>
-                    <a href="/static/img/datadog-flame-graph.png" target="_blank" title="Click to enlarge">
+                    {% if p.image %}
+                    <a href="{{ p.image.src }}" target="_blank" title="Click to enlarge">
                         <div class="mb-4 rounded-lg overflow-hidden border border-slate-700 hover:border-sky-500/50 transition">
-                            <img src="/static/img/datadog-flame-graph.png"
-                                 alt="Datadog APM — POST /events flame graph with automatic DynamoDB child span detection"
-                                 class="w-full">
+                            <img src="{{ p.image.src }}" alt="{{ p.image.alt }}" class="w-full">
                         </div>
                     </a>
+                    {% endif %}
+                    {% if p.live or p.linkedin or p.note %}
                     <div class="pt-4 border-t border-slate-700 flex gap-4">
+                        {% if p.note %}
+                        <span class="text-slate-500 text-xs"><i class="fas fa-bolt mr-1"></i>{{ p.note }}</span>
+                        {% endif %}
+                        {% if p.live %}
                         <a href="https://iot.gonzalezsanchez.dev" target="_blank"
                             class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fas fa-external-link-alt mr-1"></i>Live →
                         </a>
-                        <a href="https://www.linkedin.com/posts/activity-7455558039853645824-reu9" target="_blank"
+                        {% endif %}
+                        {% if p.linkedin %}
+                        <a href="{{ p.linkedin }}" target="_blank"
                             class="text-sky-400 text-sm hover:text-sky-300 transition">
                             <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
                         </a>
+                        {% endif %}
                     </div>
+                    {% endif %}
                 </div>
-
-                <!-- Project 2a -->
-                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2a</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer <span class="text-slate-400 font-normal text-sm">· AWS Serverless</span></h3>
-                        </div>
-                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                            class="text-slate-400 hover:text-sky-400 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Serverless ETL pipeline: extracts historical sensor data from DynamoDB, detects occupancy schedules, temperature trends and anomalies, stores results in Aurora Serverless v2 (PostgreSQL).
-                        Full Terraform infrastructure. Runs on-demand to minimise costs.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Step Functions</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Aurora Serverless</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Terraform</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">EventBridge</span>
-                    </div>
-                    <a href="/static/img/step-functions-project2a.png" target="_blank" title="Click to enlarge">
-                        <div class="mb-4 rounded-lg overflow-hidden border border-slate-700 hover:border-sky-500/50 transition">
-                            <img src="/static/img/step-functions-project2a.png"
-                                 alt="Step Functions execution graph — Extract → Transform → Analyze"
-                                 class="w-full">
-                        </div>
-                    </a>
-                    <div class="pt-4 border-t border-slate-700 flex gap-4">
-                        <span class="text-slate-500 text-xs"><i class="fas fa-bolt mr-1"></i>On-demand · AWS</span>
-                        <a href="https://www.linkedin.com/posts/activity-7450582273697026049-aOCE" target="_blank"
-                            class="text-sky-400 text-sm hover:text-sky-300 transition">
-                            <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2b -->
-                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2b</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer <span class="text-slate-400 font-normal text-sm">· Data Engineering</span></h3>
-                        </div>
-                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                            class="text-slate-400 hover:text-sky-400 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Same analytics goal as 2a, re-implemented with a data engineering stack. Medallion architecture (Bronze → Silver → Gold): raw Parquet → processed Parquet → PostgreSQL via dbt. PySpark analytics: occupancy schedules, temperature trend regression (regr_slope), z-score anomaly detection, spatial hotspots (GeoPandas). Observability via OTel → Grafana Cloud. Power BI dashboard live in the frontend. Deployed via a 9-stage Jenkins CD pipeline.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Apache Airflow</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">PySpark</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">dbt</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">AWS S3</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">GeoPandas</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Power BI</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Grafana Cloud</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Jenkins</span>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex gap-4">
-                        <a href="https://iot.gonzalezsanchez.dev" target="_blank"
-                            class="text-sky-400 text-sm hover:text-sky-300 transition">
-                            <i class="fas fa-external-link-alt mr-1"></i>Live →
-                        </a>
-                        <a href="https://www.linkedin.com/posts/activity-7460192379891855360-47j7" target="_blank"
-                            class="text-sky-400 text-sm hover:text-sky-300 transition">
-                            <i class="fab fa-linkedin mr-1"></i>LinkedIn post →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2c -->
-                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 2c</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">Behavior Analyzer <span class="text-slate-400 font-normal text-sm">· Azure Databricks Lakehouse</span></h3>
-                        </div>
-                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                            class="text-slate-400 hover:text-sky-400 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Same analytics domain as 2b, rebuilt on a fully managed Azure stack. Bronze ingestion via Auto Loader, Silver transformation with the Write-Audit-Publish pattern (good records MERGEd idempotent, invalid records to quarantine — never deleted), Gold layer with dbt-databricks incremental models: z-score anomaly detection, hourly aggregations, dimensional models. Full IaC via Terraform. Monthly job on the 1st at 06:00 Brussels time via Databricks Asset Bundles. Gold data served live via FastAPI /lakehouse/* endpoints.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Azure Databricks</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Delta Lake</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Unity Catalog</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">dbt</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">ADLS Gen2</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Terraform</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">DABs</span>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex gap-4">
-                        <a href="https://iot.gonzalezsanchez.dev" target="_blank"
-                            class="text-sky-400 text-sm hover:text-sky-300 transition">
-                            <i class="fas fa-external-link-alt mr-1"></i>Live →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-sky-500/50 transition group">
-                    <div class="flex justify-between items-start mb-3">
-                        <div>
-                            <p class="text-xs text-slate-500 mb-1 uppercase tracking-wider">Project 4</p>
-                            <h3 class="text-lg font-semibold group-hover:text-sky-300 transition">AI Assistant <span class="text-slate-400 font-normal text-sm">· Claude + MCP</span></h3>
-                        </div>
-                        <a href="https://github.com/GonzalezSanchez/iot-monitoring-platform" target="_blank"
-                            class="text-slate-400 hover:text-sky-400 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Conversational AI layer over the live platform: Claude answers questions about the real sensor data by calling the platform's own REST APIs, exposed as 7 read-only MCP tools. Bounded agent loop on the streaming Claude API, answers streamed token-by-token via SSE into a chat tab. Security by design: least-privilege container, read-only tool allowlist, per-IP rate limiting.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Python</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Claude API</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">MCP</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">FastAPI</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">SSE</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">Docker</span>
-                        <span class="bg-slate-700 text-sky-300 px-2.5 py-1 rounded-full text-xs">React</span>
-                    </div>
-                    <a href="/static/img/project4-ai-chat.png" target="_blank" title="Click to enlarge">
-                        <div class="mb-4 rounded-lg overflow-hidden border border-slate-700 hover:border-sky-500/50 transition">
-                            <img src="/static/img/project4-ai-chat.png"
-                                 alt="AI Assistant chat — Claude answers from the live data via the get_rooms MCP tool"
-                                 class="w-full">
-                        </div>
-                    </a>
-                    <div class="pt-4 border-t border-slate-700 flex gap-4">
-                        <a href="https://iot.gonzalezsanchez.dev" target="_blank"
-                            class="text-sky-400 text-sm hover:text-sky-300 transition">
-                            <i class="fas fa-external-link-alt mr-1"></i>Live →
-                        </a>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
