@@ -67,9 +67,9 @@ PROJECTS = [
             "dbt. PySpark analytics: occupancy schedules, temperature trend regression (regr_slope), "
             "z-score anomaly detection, spatial hotspots (GeoPandas). Observability via OTel → "
             "Grafana Cloud. Power BI dashboard live in the frontend. Deployed via a 9-stage Jenkins "
-            "CD pipeline."
+            "CD pipeline (Groovy Jenkinsfile)."
         ),
-        "tags": ["Python", "Apache Airflow", "PySpark", "dbt", "AWS S3", "GeoPandas", "Power BI", "Grafana Cloud", "Jenkins"],
+        "tags": ["Python", "Apache Airflow", "PySpark", "dbt", "AWS S3", "GeoPandas", "Power BI", "Grafana Cloud", "Jenkins (Groovy)"],
         "live": True,
         "linkedin": "https://www.linkedin.com/posts/activity-7460192379891855360-47j7",
     },
@@ -87,6 +87,21 @@ PROJECTS = [
         ),
         "tags": ["Python", "Azure Databricks", "Delta Lake", "Unity Catalog", "dbt", "ADLS Gen2", "Terraform", "DABs"],
         "live": True,
+    },
+    {
+        "label": "Project 3",
+        "title": "IoT Device Gateway",
+        "subtitle": "Kafka",
+        "description": (
+            "Secure device layer for the platform: device registration with bcrypt-hashed API keys, "
+            "short-lived JWT session tokens and per-device sliding-window rate limiting. Async "
+            "FastAPI producer publishes sensor events to Kafka (Redpanda); a consumer group "
+            "normalises them to the shared DynamoDB contract with idempotent writes — poison "
+            "messages go to a dead-letter queue with full error context. CloudFormation IaC, CLI "
+            "device simulator and Locust load-test suite integrated in CI."
+        ),
+        "tags": ["Python", "FastAPI", "Kafka", "Redpanda", "DynamoDB", "CloudFormation", "Locust"],
+        "note": "Live in production · backend-only (no dashboard tab)",
     },
     {
         "label": "Project 4",
