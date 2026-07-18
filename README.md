@@ -37,7 +37,7 @@ The app runs on the server as a Docker container behind a Cloudflare tunnel.
 ### Update code
 ```bash
 # On the server
-cd ~/Portfolio/portfolio-website
+cd ~/portfolio/portfolio-website
 git pull
 docker build -t portfolio-website .
 docker stop portfolio-website && docker rm portfolio-website
@@ -47,7 +47,7 @@ docker run -d --name portfolio-website --restart unless-stopped -p 8000:8000 por
 ### Update CV files (manual — not in git)
 ```bash
 # From local machine
-scp static/gonzalez-sanchez-cv.pdf acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
-scp static/gonzalez-sanchez-cv-en.html acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
-scp static/gonzalez-sanchez-cv-nl.html acer.gonzalezsanchez.dev:~/Portfolio/portfolio-website/static/
+scp static/gonzalez-sanchez-cv.pdf acer.gonzalezsanchez.dev:~/portfolio/portfolio-website/static/
+scp static/gonzalez-sanchez-cv-en.html acer.gonzalezsanchez.dev:~/portfolio/portfolio-website/static/
+scp static/gonzalez-sanchez-cv-nl.html acer.gonzalezsanchez.dev:~/portfolio/portfolio-website/static/
 ```
